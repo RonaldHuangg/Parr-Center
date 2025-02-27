@@ -1,0 +1,99 @@
+.faq-section {
+    max-width: 60%;
+    margin: 2rem auto;
+    padding: 1rem;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .faq-title {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: -1rem;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .search-container{
+    display: flex;
+    margin-top: 5%;
+    font-size: 20px;
+    margin-bottom: 1%;
+  }
+
+  .search-container i{
+    padding: 1.5%;
+    padding-left: 0.5rem;
+    font-size: 3 rem;
+    padding-right: 3%;
+    padding-bottom: 0;
+    bottom: 0;
+    color: #ccc;
+  }
+  
+  .faq-search {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid white;
+    font-size: 18px;
+    font-family: "Open Sans", serif;
+    font-weight: 500;
+    color: #ccc;
+    letter-spacing: 0.5px;
+  }
+
+  .faq-search:focus {
+    border: 1px solid white; /* Keeps the border the same when clicked */
+    outline: none; 
+  }
+  
+  .faq-list {
+    overflow: hidden;
+    padding: 0;
+    
+  }
+  
+  .faq-item {
+    border-top: 1px solid #ccc;
+    font-size: 17px;
+    padding: 1%;
+  }
+  
+  .faq-question {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 23px;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: "Open Sans", serif;
+    font-style: normal;
+  }
+  
+  .faq-answer {
+    padding: 0.5rem;
+    padding-left: 6rem;
+    padding-top: 0;
+    background-color: #ffffff;
+    color: #13294B;
+    font-family: "Open Sans", serif;
+    font-weight: 600;
+  }
+
+  .arrow-buton{
+    background-color: #13294B;
+    padding: 0.5rem 0.5rem;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    margin-left: 5%;
+    margin-top: 5%;
+  }

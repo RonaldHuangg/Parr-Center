@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar.js";
+import Faq from "./Faq.js";
+import Footer from "./Footer.js";
 
 function App() {
     const [message, setMessage] = useState("Loading...");
@@ -20,14 +23,12 @@ function App() {
     }, []);
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>React + Node.js App</h1>
-            {error ? (
-                <p style={{ color: "red" }}>{error}</p>
-            ) : (
-                <p>Backend says: {message}</p>
-            )}
-        </div>
+        <>
+        <Navbar/>
+        <Faq/>
+        <Footer/>
+        </>
+        
     );
 }
 
