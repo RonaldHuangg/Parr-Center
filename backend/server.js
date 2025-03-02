@@ -9,35 +9,56 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Hello from Node.js backend!");
 });
-
-// Get all items from a sample table (replace 'items' with your actual table name)
-app.get("/api/items", async (req, res) => {
+// This is just like a placeholder, its called items in the supabase rn but we should prolly change it to like idk userid progress, answers,etc)
+app.get("/api/users", async (req, res) => {
   try {
     const { data, error } = await supabase
-      .from('items')
+      .from('users')
       .select('*');
     
     if (error) throw error;
     
     res.json(data);
   } catch (err) {
-    console.error('Error fetching items:', err);
+    console.error('Error fetching users:', err);
     res.status(500).json({ error: err.message });
   }
 });
 
-// Add a new item
-app.post("/api/items", async (req, res) => {
+// adding a new item
+app.post("/api/users", async (req, res) => {
   try {
     const { data, error } = await supabase
-      .from('items')
-      .insert([req.body]);
+      .from('users')
+      .insert([req.body])
+      .select();
     
     if (error) throw error;
     
     res.status(201).json(data);
   } catch (err) {
-    console.error('Error creating item:', err);
+    console.error('Error creating user:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Keep the old endpoints for backward compatibility
+app.get("/api/items", async (req, res) => {
+  res.redirect('/api/users');
+});
+
+app.post("/api/items", async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('users')
+      .insert([req.body])
+      .select();
+    
+    if (error) throw error;
+    
+    res.status(201).json(data);
+  } catch (err) {
+    console.error('Error creating user:', err);
     res.status(500).json({ error: err.message });
   }
 });

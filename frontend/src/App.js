@@ -3,9 +3,10 @@ import "./App.css";
 
 function App() {
     const [message, setMessage] = useState("Loading...");
-    const [items, setItems] = useState([]);
-    const [newItem, setNewItem] = useState({ name: "", description: "" });
+    const [users, setUsers] = useState([]);
+    const [newUser, setNewUser] = useState({ username: "", password: "" });
     const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
     const [loading, setLoading] = useState(true);
 
 
@@ -26,14 +27,14 @@ function App() {
 
     // fetch from the database
     useEffect(() => {
-        const fetchItems = async () => {
+        const fetchUsers = async () => {
             try {
-                const response = await fetch("http://localhost:5001/api/items");
+                const response = await fetch("http://localhost:5001/api/users");
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 const data = await response.json();
-                setItems(data);
+                setUsers(data);
             } catch (err) {
                 console.error("Error fetching users:", err);
                 setError("Failed to fetch users from the database.");
@@ -42,25 +43,28 @@ function App() {
             }
         };
 
-        fetchItems();
+        fetchUsers();
     }, []);
 
     // for handling input changes
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setNewItem({ ...newItem, [name]: value });
+        setNewUser({ ...newUser, [name]: value });
     };
 
     // new user
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setError(null);
+        setSuccess(null);
+        
         try {
-            const response = await fetch("http://localhost:5001/api/items", {
+            const response = await fetch("http://localhost:5001/api/users", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(newItem),
+                body: JSON.stringify(newUser),
             });
 
             if (!response.ok) {
@@ -68,18 +72,33 @@ function App() {
             }
 
             const result = await response.json();
-            setItems([...items, result[0]]);
-            setNewItem({ name: "", description: "" });
+            
+            if (Array.isArray(result) && result.length > 0) {
+                setUsers([...users, result[0]]);
+            } else if (result && !Array.isArray(result)) {
+                setUsers([...users, result]);
+            } else {
+                const refreshResponse = await fetch("http://localhost:5001/api/users");
+                const refreshData = await refreshResponse.json();
+                setUsers(refreshData);
+            }
+            
+            setNewUser({ username: "", password: "" });
+            setSuccess("User added successfully!");
+            
+            setTimeout(() => {
+                setSuccess(null);
+            }, 3000);
         } catch (err) {
-            console.error("Error adding item:", err);
-            setError("Failed to add new user.");
+            console.error("Error adding user:", err);
+            setError("Failed to add new user. Please try again.");
         }
     };
 
     return (
         <div className="App">
             <div style={{ textAlign: "center", marginTop: "50px" }}>
-                <h1>Parr learning center</h1>
+                <h1>Parr Learning Center</h1>
                 {error ? (
                     <p style={{ color: "red" }}>{error}</p>
                 ) : (
@@ -88,12 +107,14 @@ function App() {
 
                 <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
                     <h2>Add New User</h2>
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+                    {success && <p style={{ color: "green" }}>{success}</p>}
                     <form onSubmit={handleSubmit}>
                         <div style={{ marginBottom: "10px" }}>
                             <input
                                 type="text"
-                                name="name"
-                                value={newItem.name}
+                                name="username"
+                                value={newUser.username}
                                 onChange={handleInputChange}
                                 placeholder="Username"
                                 style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
@@ -101,12 +122,13 @@ function App() {
                             />
                         </div>
                         <div style={{ marginBottom: "10px" }}>
-                            <textarea
-                                name="description"
-                                value={newItem.description}
+                            <input
+                                type="password"
+                                name="password"
+                                value={newUser.password}
                                 onChange={handleInputChange}
-                                placeholder="Description"
-                                style={{ padding: "8px", width: "100%", boxSizing: "border-box", minHeight: "80px" }}
+                                placeholder="Password"
+                                style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
                                 required
                             />
                         </div>
@@ -127,11 +149,11 @@ function App() {
                     <h2>Users from Supabase</h2>
                     {loading ? (
                         <p>Loading users...</p>
-                    ) : items.length > 0 ? (
+                    ) : users.length > 0 ? (
                         <ul style={{ listStyleType: "none", padding: 0 }}>
-                            {items.map((item) => (
+                            {users.map((user) => (
                                 <li
-                                    key={item.id}
+                                    key={user.id}
                                     style={{
                                         border: "1px solid #ddd",
                                         padding: "10px",
@@ -139,8 +161,8 @@ function App() {
                                         borderRadius: "4px",
                                     }}
                                 >
-                                    <h3>{item.name}</h3>
-                                    <p>{item.description}</p>
+                                    <h3>{user.username}</h3>
+                                    <p>Password: {user.password}</p>
                                 </li>
                             ))}
                         </ul>
