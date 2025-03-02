@@ -34,6 +34,11 @@
     font-size: 20px;
   }
 
+  .nav-button:hover{
+    background-color: #F8F8F8;
+    color: #13294B;
+  }
+
   .nav-down {
     padding: 0;
     margin: 0;
@@ -44,6 +49,5 @@
     font-size: 18px;
     color: white;
   }
-
   
   
