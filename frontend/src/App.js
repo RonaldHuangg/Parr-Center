@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Header from "./Header";
+import Signup from "./Signup";
+import Login from "./Login";
+import Footer from "./Footer";
 
 function App() {
     const [message, setMessage] = useState("Loading...");
@@ -20,14 +24,11 @@ function App() {
     }, []);
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>React + Node.js App</h1>
-            {error ? (
-                <p style={{ color: "red" }}>{error}</p>
-            ) : (
-                <p>Backend says: {message}</p>
-            )}
-        </div>
+        <>
+            <Header />
+            <Signup />
+            <Footer />
+        </>
     );
 }
 
