@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import LandingPage from "./components/LandingPage"; // Import the landing page
+import faq from "./Faq";
+import Navbar from "./Navbar";
+import footer from "./Footer";
 
 function App() {
     const [message, setMessage] = useState("Loading...");
@@ -8,7 +12,6 @@ function App() {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
     const [loading, setLoading] = useState(true);
-
 
     useEffect(() => {
         fetch("http://localhost:5001/")
@@ -25,7 +28,6 @@ function App() {
             });
     }, []);
 
-    // fetch from the database
     useEffect(() => {
         const fetchUsers = async () => {
             try {
@@ -46,18 +48,16 @@ function App() {
         fetchUsers();
     }, []);
 
-    // for handling input changes
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewUser({ ...newUser, [name]: value });
     };
 
-    // new user
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
         setSuccess(null);
-        
+
         try {
             const response = await fetch("http://localhost:5001/api/users", {
                 method: "POST",
@@ -72,20 +72,10 @@ function App() {
             }
 
             const result = await response.json();
-            
-            if (Array.isArray(result) && result.length > 0) {
-                setUsers([...users, result[0]]);
-            } else if (result && !Array.isArray(result)) {
-                setUsers([...users, result]);
-            } else {
-                const refreshResponse = await fetch("http://localhost:5001/api/users");
-                const refreshData = await refreshResponse.json();
-                setUsers(refreshData);
-            }
-            
+            setUsers([...users, result]);
             setNewUser({ username: "", password: "" });
             setSuccess("User added successfully!");
-            
+
             setTimeout(() => {
                 setSuccess(null);
             }, 3000);
@@ -97,6 +87,10 @@ function App() {
 
     return (
         <div className="App">
+            {/* Render Landing Page */}
+            <LandingPage />
+
+            {/* Backend Data Section */}
             <div style={{ textAlign: "center", marginTop: "50px" }}>
                 <h1>Parr Learning Center</h1>
                 {error ? (
@@ -171,7 +165,7 @@ function App() {
                     )}
                 </div>
             </div>
-        </div>
+            </div>
     );
 }
 
