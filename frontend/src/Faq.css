@@ -97,3 +97,8 @@
     margin-left: 5%;
     margin-top: 5%;
   }
+
+  .arrow-buton:hover{
+    background-color: #4B9CD3;
+    color: white;
+  }
