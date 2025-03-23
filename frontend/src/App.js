@@ -3,7 +3,7 @@ import "./App.css";
 import LandingPage from "./components/LandingPage"; // Import the landing page
 import faq from "./Faq";
 import Navbar from "./Navbar";
-import footer from "./footer";
+import footer from "./Footer";
 
 function App() {
     const [message, setMessage] = useState("Loading...");
