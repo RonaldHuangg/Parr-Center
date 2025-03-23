@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from "react";
+import "./App.css";
+import LandingPage from "./components/LandingPage"; // Import the landing page
+import faq from "./Faq";
+import Navbar from "./Navbar";
+import footer from "./footer";
 
 function App() {
     const [message, setMessage] = useState("Loading...");
@@ -81,14 +86,86 @@ function App() {
     };
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>React + Node.js App</h1>
-            {error ? (
-                <p style={{ color: "red" }}>{error}</p>
-            ) : (
-                <p>Backend says: {message}</p>
-            )}
-        </div>
+        <div className="App">
+            {/* Render Landing Page */}
+            <LandingPage />
+
+            {/* Backend Data Section */}
+            <div style={{ textAlign: "center", marginTop: "50px" }}>
+                <h1>Parr Learning Center</h1>
+                {error ? (
+                    <p style={{ color: "red" }}>{error}</p>
+                ) : (
+                    <p>Backend says: {message}</p>
+                )}
+
+                <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+                    <h2>Add New User</h2>
+                    {error && <p style={{ color: "red" }}>{error}</p>}
+                    {success && <p style={{ color: "green" }}>{success}</p>}
+                    <form onSubmit={handleSubmit}>
+                        <div style={{ marginBottom: "10px" }}>
+                            <input
+                                type="text"
+                                name="username"
+                                value={newUser.username}
+                                onChange={handleInputChange}
+                                placeholder="Username"
+                                style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
+                                required
+                            />
+                        </div>
+                        <div style={{ marginBottom: "10px" }}>
+                            <input
+                                type="password"
+                                name="password"
+                                value={newUser.password}
+                                onChange={handleInputChange}
+                                placeholder="Password"
+                                style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
+                                required
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            style={{
+                                padding: "8px 16px",
+                                backgroundColor: "#4CAF50",
+                                color: "white",
+                                border: "none",
+                                cursor: "pointer",
+                            }}
+                        >
+                            Add User
+                        </button>
+                    </form>
+
+                    <h2>Users from Supabase</h2>
+                    {loading ? (
+                        <p>Loading users...</p>
+                    ) : users.length > 0 ? (
+                        <ul style={{ listStyleType: "none", padding: 0 }}>
+                            {users.map((user) => (
+                                <li
+                                    key={user.id}
+                                    style={{
+                                        border: "1px solid #ddd",
+                                        padding: "10px",
+                                        marginBottom: "10px",
+                                        borderRadius: "4px",
+                                    }}
+                                >
+                                    <h3>{user.username}</h3>
+                                    <p>Password: {user.password}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>No users found. Add some!</p>
+                    )}
+                </div>
+            </div>
+            </div>
     );
 }
 
