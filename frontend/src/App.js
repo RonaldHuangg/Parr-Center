@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/LandingPage"; // Import the landing page
+import ModuleOnePart1 from "./components/ModuleOnePart1";
 import faq from "./Faq";
 import Navbar from "./Navbar";
 import footer from "./Footer";
@@ -86,86 +88,92 @@ function App() {
     };
 
     return (
-        <div className="App">
-            {/* Render Landing Page */}
-            <LandingPage />
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/module1/part1" element={<ModuleOnePart1 />} />
+                </Routes>
 
-            {/* Backend Data Section */}
-            <div style={{ textAlign: "center", marginTop: "50px" }}>
-                <h1>Parr Learning Center</h1>
-                {error ? (
-                    <p style={{ color: "red" }}>{error}</p>
-                ) : (
-                    <p>Backend says: {message}</p>
-                )}
+                {/* Backend Data Section - Only show on landing page */}
+                {window.location.pathname === "/" && (
+                    <div style={{ textAlign: "center", marginTop: "50px" }}>
+                        <h1>Parr Learning Center</h1>
+                        {error ? (
+                            <p style={{ color: "red" }}>{error}</p>
+                        ) : (
+                            <p>Backend says: {message}</p>
+                        )}
 
-                <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-                    <h2>Add New User</h2>
-                    {error && <p style={{ color: "red" }}>{error}</p>}
-                    {success && <p style={{ color: "green" }}>{success}</p>}
-                    <form onSubmit={handleSubmit}>
-                        <div style={{ marginBottom: "10px" }}>
-                            <input
-                                type="text"
-                                name="username"
-                                value={newUser.username}
-                                onChange={handleInputChange}
-                                placeholder="Username"
-                                style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
-                                required
-                            />
-                        </div>
-                        <div style={{ marginBottom: "10px" }}>
-                            <input
-                                type="password"
-                                name="password"
-                                value={newUser.password}
-                                onChange={handleInputChange}
-                                placeholder="Password"
-                                style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
-                                required
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            style={{
-                                padding: "8px 16px",
-                                backgroundColor: "#4CAF50",
-                                color: "white",
-                                border: "none",
-                                cursor: "pointer",
-                            }}
-                        >
-                            Add User
-                        </button>
-                    </form>
-
-                    <h2>Users from Supabase</h2>
-                    {loading ? (
-                        <p>Loading users...</p>
-                    ) : users.length > 0 ? (
-                        <ul style={{ listStyleType: "none", padding: 0 }}>
-                            {users.map((user) => (
-                                <li
-                                    key={user.id}
+                        <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+                            <h2>Add New User</h2>
+                            {error && <p style={{ color: "red" }}>{error}</p>}
+                            {success && <p style={{ color: "green" }}>{success}</p>}
+                            <form onSubmit={handleSubmit}>
+                                <div style={{ marginBottom: "10px" }}>
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        value={newUser.username}
+                                        onChange={handleInputChange}
+                                        placeholder="Username"
+                                        style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
+                                        required
+                                    />
+                                </div>
+                                <div style={{ marginBottom: "10px" }}>
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        value={newUser.password}
+                                        onChange={handleInputChange}
+                                        placeholder="Password"
+                                        style={{ padding: "8px", width: "100%", boxSizing: "border-box" }}
+                                        required
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
                                     style={{
-                                        border: "1px solid #ddd",
-                                        padding: "10px",
-                                        marginBottom: "10px",
-                                        borderRadius: "4px",
+                                        padding: "8px 16px",
+                                        backgroundColor: "#4CAF50",
+                                        color: "white",
+                                        border: "none",
+                                        cursor: "pointer",
                                     }}
                                 >
-                                    <h3>{user.username}</h3>
-                                    <p>Password: {user.password}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p>No users found. Add some!</p>
-                    )}
-                </div>
+                                    Add User
+                                </button>
+                            </form>
+
+                            <h2>Users from Supabase</h2>
+                            {loading ? (
+                                <p>Loading users...</p>
+                            ) : users.length > 0 ? (
+                                <ul style={{ listStyleType: "none", padding: 0 }}>
+                                    {users.map((user) => (
+                                        <li
+                                            key={user.id}
+                                            style={{
+                                                border: "1px solid #ddd",
+                                                padding: "10px",
+                                                marginBottom: "10px",
+                                                borderRadius: "4px",
+                                            }}
+                                        >
+                                            <h3>{user.username}</h3>
+                                            <p>Password: {user.password}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p>No users found. Add some!</p>
+                            )}
+                        </div>
+                    </div>
+                )}
             </div>
-            </div>
+        </Router>
     );
 }
 

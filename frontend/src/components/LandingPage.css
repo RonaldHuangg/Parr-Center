@@ -73,15 +73,20 @@ body {
   
 .content-container {
   display: flex;
+  min-height: 0;
 }
   
 .sidebar {
   width: 20%;
-  background: #e5e7eb;
+  background: none;
+  display: flex;
+  flex-direction: column;
 }
   
 .sidebar ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
   
 .sidebar li {
@@ -89,6 +94,7 @@ body {
   padding: 25px;
   border-bottom: 1px solid #C3BCB5;
   border-right: 1px solid #C3BCB5;
+  margin: 0;
 }
   
 .sidebar .active-module {
@@ -165,6 +171,7 @@ body {
   
 .progress-section {
   margin-top: 20px;
+  width: 100%;
 }
   
 .progress-title {
@@ -176,19 +183,39 @@ body {
   
 .progress-tracker {
   display: flex;
-  gap: 15px;
   align-items: center;
+  justify-content: center;
+  gap: 72px;
+  margin: 40px auto;
+  position: relative;
+  width: fit-content;
 }
   
 .progress-step {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #B5ADA5;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
-  border-radius: 50%;
   font-weight: bold;
+  color: #13294B;
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+  
+/* Lines between steps */
+.progress-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 2px;
+  background-color: #B5ADA5;
 }
   
 .module-overview {
@@ -207,6 +234,7 @@ body {
   font-weight: 400;
   color: #4b5563;
   line-height: 1.5;
+  text-align: left;
 }
 
 .footer {
@@ -215,6 +243,9 @@ body {
   padding: 20px 40px;
   display: flex;
   justify-content: center;
+  margin-top: -2px;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-container {
@@ -257,4 +288,9 @@ body {
   text-align: left;
   font-size: 14px;
   line-height: 1.4;
+}
+
+.button-link {
+    text-decoration: none;
+    display: inline-block;
 }

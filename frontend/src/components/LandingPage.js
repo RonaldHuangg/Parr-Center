@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import logo from "./parrcenterlogo.png"; 
 import profileIcon from "./person.png"; 
@@ -46,7 +47,9 @@ const LandingPage = () => {
             </p>
 
             <div className="button-group">
-              <button className="start-module-btn">Start Module</button>
+              <Link to="/module1/part1" className="button-link">
+                <button className="start-module-btn">Start Module</button>
+              </Link>
               <button className="view-journal-btn">View Journal</button>
             </div>
           </section>
