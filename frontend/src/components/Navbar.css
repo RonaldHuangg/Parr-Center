@@ -9,12 +9,22 @@
   
   .navbar-title {
     font-weight: bold;
-    margin-left: 2.5%;
+    margin-left: -30%;
     flex-grow: 1;
   }
 
+  .navbar-title2 {
+    font-weight: bold;
+    margin-left: -42%;
+    flex-grow: 1;
+  }
+
+  .navbar-title2 img{
+    width: 28%;
+  }
+
   .navbar-title img{
-    width: 42%;
+    width: 35%;
   }
   
   .navbar-buttons {

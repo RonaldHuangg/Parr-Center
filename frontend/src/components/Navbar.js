@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "./Images/logo.png";
+import logo from "./logo.png";
+import { Link } from "react-router-dom";
+
 
 function Navbar(){
     return(
@@ -11,7 +13,9 @@ function Navbar(){
         </div>
 
         <div className="navbar-buttons">
+          <Link to="/">
           <button className="nav-button">Home&nbsp;Page</button>
+          </Link>
           <button className="nav-button">Flashcard</button>
           <button className="nav-button">Q&A</button>
 

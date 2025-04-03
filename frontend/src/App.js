@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/LandingPage"; // Import the landing page
 import ModuleOnePart1 from "./components/ModuleOnePart1";
-import faq from "./Faq";
-import Navbar from "./Navbar";
-import footer from "./Footer";
+import Faq from "./components/Faq";
+import ModuleOnePart4 from "./components/ModuleOnePart4";
+
 
 function App() {
     const [message, setMessage] = useState("Loading...");
@@ -93,6 +93,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/module1/part1" element={<ModuleOnePart1 />} />
+                    <Route path="/module1/part4" element={<ModuleOnePart4 />} />
+                    <Route path="/faq" element={<Faq />} />
                 </Routes>
 
                 {/* Backend Data Section - Only show on landing page */}

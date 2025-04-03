@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Faq.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function FAQItem({ question, answer }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +27,11 @@ function FAQSection() {
 
   return (
     <>
-    <i class="fa-solid fa-arrow-left arrow-buton"></i>
+    <Link to="/">
+          <button className="arrow-buton"><i class="fa-solid fa-arrow-left"></i></button>
+    </Link>
+    
+
     <div className="faq-section">
       <h1 className="faq-title">Frequently Asked Questions</h1>
 
@@ -46,8 +53,10 @@ function FAQSection() {
 
 function Faq() {
   return (
-    <div>
+    <div className = "faq-body">
+      <Navbar/>
       <FAQSection />
+      <Footer/>
     </div>
   );
 }

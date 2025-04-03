@@ -14,7 +14,9 @@ const LandingPage = () => {
         </div>
         <div className="header-right">
           <button className="flashcard-btn">Flashcard</button>
+          <Link to="/faq">
           <button className="qa-btn">Q&A</button>
+          </Link>
           <div className="profile-dropdown">
             <img src={profileIcon} alt="Profile" className="profile-icon" />
           </div>
