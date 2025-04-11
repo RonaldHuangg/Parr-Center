@@ -14,7 +14,7 @@ const LandingPage = () => {
         </div>
         <div className="header-right">
           <button className="flashcard-btn">Flashcard</button>
-          <Link to="/faq">
+          <Link to="/module1/part4">
           <button className="qa-btn">Q&A</button>
           </Link>
           <div className="profile-dropdown">

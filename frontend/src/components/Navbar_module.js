@@ -19,7 +19,6 @@ function NavbarModule(){
           <button className="nav-button">Q&A</button>
           </Link>
           <button className="nav-button"><i className="fa-solid fa-user"></i></button>
-          <button className="nav-down"><i className="fa-solid fa-angle-down"></i></button>
 
         </div>
         
