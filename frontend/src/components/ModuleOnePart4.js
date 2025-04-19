@@ -4,6 +4,7 @@ import { useState } from "react";
 import './ModuleOnePart4.css';
 import NavbarModule from "./Navbar_module";
 import philosophyLogo from './philosophy_logo.png';
+import { Link } from "react-router-dom";
 
 
 function ModuleOnePart4() {
@@ -19,64 +20,93 @@ function ModuleOnePart4() {
     <NavbarModule/>
 
          <div className="module-page">
-    
+            <Link to='/'>
                 <div className="back-button4">
                     <button>←</button>
                 </div>
+                </Link>
     
                 <div className="main-content">
 
-                    <h1 className='title_4'>Part 4: Analyze a New Ethics Bowl Case</h1>
+                <p className='blurb'>In this section, interactively explore and analyze key ethical frameworks to deepen your understanding.</p>
+                    <h1 className='title_4'>Part 4: Constructive Dialogue</h1>
+                    
                     
                     <div className="progress-steps">
-                        <div className="step active4">1</div>
+                        <Link to="/module1/part1" className="step active">1</Link>
                         <div className="step-line"></div>
-                        <div className="step active4">2</div>
+
+                        <Link to="/module1/part1" className="step active">2</Link>
                         <div className="step-line"></div>
-                        <div className="step active4">3</div>
+
+                        <Link to="/module1/part1" className="step active">3</Link>
                         <div className="step-line"></div>
-                        <div className="step active4">4</div>
+
+                        <Link to="/module1/part4" className="step active">4</Link>
                     </div>
 
+
                     <div className="instructions">
+                        <p className='instru-p4'><b>Instructions</b></p>
                         <ol>
-                        <li>Read the story carefully to understand the problem. Think about who is involved and what the main issue is.</li>
-                        <li>
-                            <p>Highlight</p>
-                            <ul>
-                            <li>What helps the most people (Utilitarian reasoning).</li>
-                            <li>What focuses on fairness or equality (Fairness).</li>
-                            <li>What helps those who need it the most (Priority View).</li>
-                            </ul>
+                        <li><b>Step Into the Role:</b> Imagine you are part of the responding team tasked with providing commentary on the opposing 
+                        team’s argument. Your goal is to thoughtfully and critically engage with their initial presentation.</li>
+                        <li><b>Evaluate the Argument:</b> Assess the reasoning and evidence provided by the opposing team. Aim to highlight areas of 
+                            agreement, identify potential weaknesses, and raise meaningful questions or counterpoints.
+        
                         </li>
-                        <li>
-                            <p>Think About the Problem</p>
-                        <ul>
-                            <li>"What makes this situation tricky or hard to solve?"</li>
-                            <li>"How do the ideas I've learned (fairness, helping people, etc) help me understand the problem better?"</li>
-                        </ul>
-                        </li>
-                        <li>
-                            <p>Take a Side</p>
-                            <ul>
-                            <li>Decide which idea (helping the most people, fariness, or helping those in need) is best way to solve the problem and explain why.</li>
-                            <li>Think about how another idea might lead to a different answer.</li>
-                            </ul>
+                        <li><b>Demonstrate Respectful Dialogue:</b> Your commentary should aim to foster a constructive discussion rather than a combative debate. 
+                            Focus on exploring the ethical complexities of the issue rather than simply "winning" the argument
                         </li>
                         </ol>
+                        <br></br>
+
+                        <div className="description4">
+                        <p><b>Your Task</b></p>
+                        <p>In your role as the <b>commentating team</b>, respond to the opposing team’s argument. Address questions like:</p>
+                        
+                        <ul>
+                            <li>To what extent has the presenting team successfully supported their position?</li>
+                            <li>Are there gaps or oversights in their reasoning or evidence?</li>
+                            <li>How might ethical considerations such as fairness, autonomy, or discrimination factor into your response?</li>
+                        </ul>
+                        <br></br>
+                        <p>Write a concise, respectful commentary that engages directly with their argument. Consider awarding points based on these criteria:</p>
+                        <ul>
+                            <li>Insightfulness and depth of response <i>(10 points)</i></li>
+                            <li>Relevance and constructiveness of the critique <i>(10 points)</i></li>
+                            <li>Respectful engagement and collaborative tone <i>(5 points)</i></li>
+                        </ul>
+                        <p>Use the scoring rubric to guide your evaluation and ensure your feedback promotes meaningful ethical reflection.</p>
+                        
+                        </div>
+
                 </div>
     
-                    <div className="case-section">
-                        <div className="case-container">
-                            <h2>Placeholder for an NHSEB or IEB case</h2>
-                        </div>
+                <div className="case-section4">
+                    <div className="case-container4">
+                        <p className="case-title"><b>Ethics Bowl Case</b></p>
+                        <p className="case-paragraph">
+                        A tech company has implemented an AI system to help screen job applicants. The AI analyzes resumes and ranks candidates based 
+                        on their likelihood of success in the role. However, journalists uncover that the AI system has been disproportionately 
+                        downgrading resumes from women and candidates with non-Anglo names. The company claims the AI is unbiased because it was trained 
+                        on "neutral" data from past hiring decisions. Critics argue that the system reflects historical biases in hiring practices and call 
+                        for its immediate suspension.
+                        </p>
+
+                        <p className="case-title"><b>Opposing Team’s Position</b> <span className="subtitle">(Initial Presentation)</span></p>
+                        <p className="case-paragraph quote">
+                        "The tech company has a moral obligation to suspend the use of this AI system immediately because it perpetuates systemic discrimination. 
+                        While the company might argue that the AI is a neutral tool, any system that results in unequal outcomes based on gender or ethnicity is 
+                        fundamentally unethical. Furthermore, the company should prioritize fairness over efficiency and take steps to evaluate and redesign the 
+                        AI system to ensure it treats all candidates equitably. Allowing this system to continue would compromise the principle of equal opportunity in the workplace."
+                        </p>
                     </div>
+                </div>
+
 
                     {/* Journal Entry */}
                 <div className="journal-entry">
-                    <h2>Post-Reflection Journal Entry</h2>
-                    <p>Which ethical framework provides the strongest guidance for resolving the case? Why? How might another framework lead to a different outcome?</p>
-                    
                     <textarea
                     rows="4"
                     placeholder="Type your answer here..."
@@ -85,7 +115,7 @@ function ModuleOnePart4() {
                     ></textarea>
                 </div>
 
-                <button className="button4 save-btn" onClick={handleSave}>Save</button>
+                {/*<button className="button4 save-btn" onClick={handleSave}>Save</button>*/}
 
                 {/* Buttons */}
                 <div className="button-container4">

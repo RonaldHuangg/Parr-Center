@@ -118,11 +118,14 @@
     background: white;
     position: relative;
     z-index: 2;
+    text-decoration: none;
+
 }
 
 .step.active {
     background-color: #DBEBF6;
     border-color: #B5ADA5;
+
 }
 
 .step-line {

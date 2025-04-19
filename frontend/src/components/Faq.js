@@ -28,8 +28,10 @@ function FAQSection() {
   return (
     <>
     <Link to="/">
-          <button className="arrow-buton"><i class="fa-solid fa-arrow-left"></i></button>
-    </Link>
+    <div className="back-button4">
+      <button>←</button>
+      </div>
+      </Link>
     
 
     <div className="faq-section">

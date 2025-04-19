@@ -2,28 +2,39 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "./logo.png";
 import { Link } from "react-router-dom";
+import parrcenterlogo from './parrcenterlogo.png';
+import person from './person.png';
+
 
 
 function Navbar(){
     return(
-        <nav className="navbar">
+      <>
+      <header className="header">
+            <div className="header-left">
+                <img src={parrcenterlogo} alt="UNC Logo" className="header-logo" />
+            </div>
+            <div className="header-right">
+              <div className="navbar-buttons">
+                
+            <Link to="/">
+            <button className="nav-button">Home&nbsp;Page</button>
+            </Link>
+            <Link to="/">
+            <button className="flashcard-btn">Flashcard</button>
+            </Link>
+            <Link to="/faq">
+            <button className="qa-btn">Q&A</button>
+            </Link>
+            <div className="profile-icon">
+                <img src={person} alt="Profile" />
+            </div>
 
-        <div className="navbar-title">
-          <img src = {logo} alt = "UNC College of Arts and Science Parr Center for Ethics"/>
-        </div>
+          </div>
 
-        <div className="navbar-buttons">
-          <Link to="/">
-          <button className="nav-button">Home&nbsp;Page</button>
-          </Link>
-          <button className="nav-button">Flashcard</button>
-          <button className="nav-button">Q&A</button>
-
-          <button className="nav-button"><i className="fa-solid fa-user"></i></button>
-
-        </div>
-        
-      </nav>
+            </div>
+        </header>
+        </>
     );
 
 }

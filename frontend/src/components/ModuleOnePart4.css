@@ -10,7 +10,8 @@
 .back-button4 {
     position: absolute;
     left: 20px;
-    top: 150px;
+    top: 12%;
+    
 }
 
 .back-button4 button {
@@ -74,10 +75,15 @@
     z-index: 2;
 }
 
+.step:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 .step.active4 {
     background-color: #DBEBF6;
     border-color: #B5ADA5;
-    font-size: x-large;
+    text-decoration: none;
 }
 
 .step-line {
@@ -88,11 +94,12 @@
     z-index: 1;
 }
 
-.case-section {
-    margin-top: 60px;
+
+.case-section4 {
+    margin-top: 30px;
 }
 
-.case-section h2 {
+.case-section4 h2 {
     font-family: "Open Sans", serif;
     color: #000;
     font-size: 30px;
@@ -100,16 +107,31 @@
     font-weight: 600;
 }
 
-.case-container {
-    width: 1000px;
-    height: 562px;
-    margin: 0 auto;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.case-container4 {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 24px 32px;
+  font-family: 'Open Sans', serif;
+  text-align: left;
+}
+
+.case-title {
+  font-size: x-large;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: black;
+}
+
+.case-paragraph {
+  font-size: large;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 20px;
+  font-family: "Open Sans", serif;
+  font-weight: 500;
 }
 
 .footer {
@@ -182,11 +204,27 @@
     margin-left: 35px;
   }
 
+  .instructions p{
+    margin-left: 35px;
+    padding-bottom: 10px
+  }
+
+
+  .description4 ul {
+    padding-left: 50px;
+  }
+
+ .blurb { 
+    margin-bottom: -4%;
+    color: gray;
+ }
+
   /* Journal Entry */
 .journal-entry {
-    margin-top: 7%;
+    margin-top: 3%;
     margin-right: 79px;
     margin-left: 79px;
+    margin-bottom: 5%;
   }
 
   .journal-entry h2{
@@ -203,7 +241,7 @@
   .journal-entry textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 5px;
     font-size: 20px;
   }

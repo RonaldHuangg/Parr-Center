@@ -15,7 +15,7 @@
 
   .navbar-title2 {
     font-weight: bold;
-    margin-left: -52%;
+    margin-left: -55%;
     flex-grow: 1;
   }
 
@@ -32,16 +32,6 @@
     gap: 1rem;
     flex-grow: 2;
     margin-right: 3%;
-  }
-  
-  .nav-button {
-    background-color: #13294B;
-    padding: 0.7rem 1rem;
-    border-radius: 30px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
   }
 
   .nav-button:hover{
@@ -61,3 +51,56 @@
   }
   
   
+.header {
+  background-color: #4B9CD3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  height: 40px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flashcard-btn,
+.qa-btn, .nav-button {
+  background: #13294B;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #13294B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.profile-icon img {
+  width: 24px;
+  height: 24px;
+}
+

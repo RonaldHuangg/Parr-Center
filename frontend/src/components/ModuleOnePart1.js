@@ -4,6 +4,7 @@ import './ModuleOnePart1.css';
 import parrcenterlogo from './parrcenterlogo.png';
 import person from './person.png';
 import philosophyLogo from './philosophy_logo.png';
+import { Link } from "react-router-dom";
 
 const ModuleOnePart1 = () => {
     const navigate = useNavigate();
@@ -20,7 +21,9 @@ const ModuleOnePart1 = () => {
                 </div>
                 <div className="header-right">
                     <button className="flashcard-btn">Flashcard</button>
+                    <Link to='/faq'k>
                     <button className="qa-btn">Q&A</button>
+                    </Link>
                     <div className="profile-icon">
                         <img src={person} alt="Profile" />
                     </div>
@@ -41,7 +44,7 @@ const ModuleOnePart1 = () => {
                     <div className="step-line"></div>
                     <div className="step">3</div>
                     <div className="step-line"></div>
-                    <div className="step">4</div>
+                    <Link to="/module1/part4" className="step">4</Link>
                 </div>
 
                 <div className="video-section">
