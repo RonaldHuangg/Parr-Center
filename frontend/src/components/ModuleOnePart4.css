@@ -1,0 +1,257 @@
+
+.module-page {
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.back-button4 {
+    position: absolute;
+    left: 20px;
+    top: 150px;
+}
+
+.back-button4 button {
+    background-color: #13294B;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.main-content h1 {
+    font-family: 'Source Serif Pro', serif;
+    color: #13294B;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.title_4{
+    margin-top: 5%;
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.step {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #B5ADA5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #13294B;
+    background: white;
+    position: relative;
+    z-index: 2;
+}
+
+.step.active4 {
+    background-color: #DBEBF6;
+    border-color: #B5ADA5;
+    font-size: x-large;
+}
+
+.step-line {
+    height: 2px;
+    width: 120px;
+    background-color: #B5ADA5;
+    margin: 0 -4px;
+    z-index: 1;
+}
+
+.case-section {
+    margin-top: 60px;
+}
+
+.case-section h2 {
+    font-family: "Open Sans", serif;
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.case-container {
+    width: 1000px;
+    height: 562px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    background-color: #4B9CD3; 
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-logo {
+    width: 180px; 
+}
+
+.footer-middle {
+    flex: 2;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-right h3 {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-right p {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.4;
+} 
+
+.instructions {
+    color: #333;
+    font-size: x-large;
+    text-align: left;
+    font-family: "Open Sans", serif;
+    font-style: normal;
+    font-weight: 500;
+    margin-top:9%;
+  }
+
+.instructions ol {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .instructions li {
+    margin-bottom: 10px;
+    margin-left: 35px;
+  }
+
+  /* Journal Entry */
+.journal-entry {
+    margin-top: 7%;
+    margin-right: 79px;
+    margin-left: 79px;
+  }
+
+  .journal-entry h2{
+    font-size: xx-large;
+  }
+
+  .journal-entry p{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .journal-entry textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+  }
+
+  /* Buttons */
+.button-container4 {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end;  /* Align buttons to the right */
+    gap: 10px; /* Adds space between buttons */
+    margin-top: 15px;
+    margin-right: 7%;
+  }
+  
+  .button4 {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: x-large;
+    cursor: pointer;
+  }
+  
+  .save-btn {
+    margin-top: 1%;
+    background: #13294B;
+    border-radius: 15px;
+    font-size: large;
+  }
+
+  .save-btn:hover{
+    background-color: #4B9CD3;
+    color: white;
+  }
+  
+  .finish-btn {
+    background: #13294B;
+  }
+
+  .finish-btn:hover{
+    background-color: #4B9CD3;
+    color: white;
+  }
+  
+  .view-btn {
+    background: #13294B;
+  }
+  .view-btn:hover{
+    background-color: #4B9CD3;
+    color: white;
+  }

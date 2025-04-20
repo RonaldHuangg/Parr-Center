@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+  
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+  
+.header {
+  background-color: #4B9CD3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  color: white;
+}
+  
+.header-left {
+  display: flex;
+  align-items: center;
+}
+  
+.header-logo {
+  height: 50px;
+  max-width: 100%;
+}
+  
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+  
+.flashcard-btn,
+.qa-btn {
+  background: #13294B;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+  
+.profile-dropdown {
+  display: flex;
+  align-items: center;
+}
+  
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #13294B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+  
+.profile-icon img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+  
+.content-container {
+  display: flex;
+  min-height: 0;
+}
+  
+.sidebar {
+  width: 20%;
+  background: none;
+  display: flex;
+  flex-direction: column;
+}
+  
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.sidebar li {
+  background: white;
+  padding: 25px;
+  border-bottom: 1px solid #C3BCB5;
+  border-right: 1px solid #C3BCB5;
+  margin: 0;
+}
+  
+.sidebar .active-module {
+  background: #DBEBF6;
+}
+
+.active-module {
+  font-weight: bold;
+  text-align: left;
+  color: #000;
+}
+
+.inactive-module {
+  text-align: left;
+}
+  
+.content {
+  flex: 1;
+  padding: 100px;
+  background: white;
+}
+  
+.module-intro {
+  text-align: left;
+}
+  
+.module-heading {
+  font-family: 'Playfair Display';
+  font-size: 45px;
+  font-weight: 700;
+  color: #B14C59;
+}
+  
+.module-subheading {
+  font-family: 'Playfair Display';
+  font-size: 45px;
+  font-weight: 600;
+  color: #B14C59;
+  margin-bottom: 10px;
+}
+  
+.module-description {
+  font-size: 25px;
+  font-weight: 400;
+  color: #BE897E;
+  margin-bottom: 20px;
+}
+  
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+  
+.start-module-btn,
+.view-journal-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 25px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+  
+.start-module-btn {
+  background: #13294B;
+  color: white;
+}
+  
+.view-journal-btn {
+  background: #13294B;
+  color: white;
+}
+  
+.progress-section {
+  margin-top: 20px;
+  width: 100%;
+}
+  
+.progress-title {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+  
+.progress-tracker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+  margin: 40px auto;
+  position: relative;
+  width: fit-content;
+}
+  
+.progress-step {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #B5ADA5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #13294B;
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+  
+/* Lines between steps */
+.progress-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 2px;
+  background-color: #B5ADA5;
+}
+  
+.module-overview {
+  margin-top: 4%;
+}
+  
+.overview-title {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+  
+.overview-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.footer {
+  background-color: #4B9CD3; 
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  margin-top: -2px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-logo {
+  width: 180px; 
+}
+
+.footer-middle {
+  flex: 2;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.footer-right {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-right h3 {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-right p {
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.button-link {
+    text-decoration: none;
+    display: inline-block;
+}

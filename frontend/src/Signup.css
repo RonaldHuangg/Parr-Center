@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Work+Sans:wght@400&display=swap');
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  height: 100%;
+  color: #13294B;
+  font-family: 'Work Sans', serif;
+}
+
+.signup-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 26px;
+  margin-top: 50px;
+}
+
+.signup-form {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.signup-input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.signup-input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #13294B;
+  border-radius: 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.signup-name-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.signup-name-info .signup-input-group {
+  width: 45%;
+}
+
+.signup-btn,
+.signup-separator, 
+.signup-social-option-buttons {
+  width: 100%;
+  max-width: 350px;
+}
+
+.signup-btn {
+  padding: 10px;
+  background-color: #4B9CD3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 35%;
+  align-self: flex-end;
+}
+
+.signup-btn:hover {
+  background-color: #4a89c4;
+}
+
+.signup-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.signup-separator hr {
+  flex-grow: 1;
+  border: none;
+  height: 1px;
+  background-color: #13294B;
+}
+
+.signup-social-option-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.signup-social-btn {
+  width: 48%;
+  border: 1px solid #13294B;
+  background: white;
+  padding: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  text-align: center;
+}
+
+.signup-social-btn:hover {
+  background-color: #f5f5f5;
+}
