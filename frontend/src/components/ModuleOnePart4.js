@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import './ModuleOnePart4.css';
 import NavbarModule from "./Navbar_module";
