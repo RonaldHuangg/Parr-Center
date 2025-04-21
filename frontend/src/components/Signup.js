@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "../../backend/firebase/auth";
-import { auth } from "../../backend/firebase"
-import { supabase } from "../../backend/db/supabase"
+import { auth } from "../../../backend/firebase"
+import { supabase } from "../../../backend/db/supabase"
 
 import "./Signup.css";
 
